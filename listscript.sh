@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #base for automating the execution of a script with a single paramater
-#multiple times.
+#multiple times. 
 #Based from http://tldp.org/LDP/abs/html/othertypesv.html
 
 MINPARAM=1
