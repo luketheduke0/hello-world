@@ -7,10 +7,9 @@ then
 fi
 cat $LISTLOCATION | while read line
 do
- ((a+=1)) 
  if [ $1 = $a ]
  then
   firefox $line
- fi 
+ fi
+ ((a+=1)) 
 done
-
