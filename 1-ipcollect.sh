@@ -9,7 +9,6 @@ httpList=common-http-ports.txt
 while read -r line
 do
     testArray[$int]=$line
-    #echo $line
     if [ $int -ne 0 ]; then
           ipString+=","$line
      else
@@ -17,8 +16,6 @@ do
      fi
      let "int+=1"
 done < "$httpList"
-
-#echo $ipString
 
 #nmap loop
 while [ $a=1 ]
