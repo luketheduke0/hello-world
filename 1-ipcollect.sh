@@ -6,7 +6,7 @@ ipArray=()
 int=0
 ipString=""
 
-#reads from ip list, forms array from it, then creates int list formatted for nmap
+#reads from ip list, forms string formatted for nmap
 while read -r line
 do
     testArray[$int]=$line
