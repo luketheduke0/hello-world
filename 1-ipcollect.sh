@@ -1,10 +1,9 @@
 a=1
-LISTLOCATION=iplist.txt
-
-httpList=common-http-ports.txt
-ipArray=()
 int=0
 ipString=""
+LISTLOCATION=iplist.txt
+httpList=common-http-ports.txt
+
 
 #reads from ip list, forms string formatted for nmap
 while read -r line
@@ -24,5 +23,5 @@ done < "$httpList"
 #nmap loop
 while [ $a=1 ]
 do
- nmap -iR 150 -n -p $ipString --open | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' >> $LISTLOCATION
+     nmap -iR 150 -n -p $ipString --open | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' >> $LISTLOCATION
 done
