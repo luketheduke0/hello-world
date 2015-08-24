@@ -9,8 +9,8 @@ fi
 
 if [ $1 ]
 then
-cat $LISTLOCATION | while read line
-do
+  cat $LISTLOCATION | while read line
+  do
     if [ $1 = $a ]
     then
       nmap $line
