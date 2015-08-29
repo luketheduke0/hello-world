@@ -26,6 +26,8 @@
 #  
 
 
+#Makes a list of all known US IP addresses based on a range of IPs
+
 #import csv
 import sys
 linearray = []
@@ -34,7 +36,6 @@ ip2array = []
 error = 0
 finalstring = ""
 
-#def 
 
 with open('us_ips.csv', 'r') as f:
     for line in f:
