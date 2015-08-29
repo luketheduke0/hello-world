@@ -48,12 +48,14 @@ with open('us_ips.csv', 'r') as f:
             print(ip2array)
         except IndexError:
             print("Ran out of stuff to split")
-            error = 1
             sys.exit(0)
         
         while(int(ip1array[0]) <= int(ip2array[0])):
+            
             while(int(ip1array[1]) <= int(ip2array[1])):
+                
                 while(int(ip1array[2]) <= int(ip2array[2])):
+                    
                     while(int(ip1array[3]) <= int(ip2array[3])):
                         
                         finalstring = (str(ip1array[0])+"."+str(ip1array[1])+"."+str(ip1array[2])+"."+str(ip1array[3]))
@@ -64,10 +66,13 @@ with open('us_ips.csv', 'r') as f:
                         ip1array[3] = int(ip1array[3]) + 1
             
                     ip1array[2] = int(ip1array[2]) + 1
+                    ip1array[3] = 0
             
                 ip1array[1] = int(ip1array[1]) + 1
+                ip1array[2] = 0
             
             ip1array[0] = int(ip1array[0]) + 1
+            ip1array[1] = 0
         
         
 
