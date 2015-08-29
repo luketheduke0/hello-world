@@ -1,4 +1,5 @@
 a=0
+b=0
 LISTLOCATION="iplist.txt"
 MINPARAM=1
 
@@ -17,4 +18,10 @@ then
     fi
     ((a+=1))
   done
+  b=$1+1000
+  if [ $b > $a ]
+  then
+    echo "Not enough IPs."
+    echo $b
+  fi
 fi
