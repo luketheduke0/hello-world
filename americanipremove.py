@@ -25,12 +25,38 @@
 #  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #  
 
-import csv
-linearray = []
 
-#def
+#import csv
+linearray = []
+ip1array = []
+ip2array = []
+error = 0
+
+#def 
 
 with open('us_ips.csv', 'r') as f:
     for line in f:
+        #splits csv values into array
         linearray = line.split(",")
-        print(linearray)
+        #splits IP addresses into array separated by period
+        #eg, ip1array[0,1,2,3] == (192,168,1,254) or whatever
+        try:
+            ip1array = str(linearray[0]).split(".")
+            ip2array = str(linearray[1]).split(".")
+            print(ip2array)
+        except IndexError:
+            print("Ran out of stuff to split")
+            error = 1
+        
+        while(int(ip1array[0]) <= int(ip2array[0])):
+            print "yes"
+            ip1array[0] = int(ip1array[0]) + 1
+        
+        
+
+
+
+
+
+
+
