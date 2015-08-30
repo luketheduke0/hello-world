@@ -8,7 +8,7 @@ with open('iplist.txt', 'rw') as capturediplistfile:
         #remove return character from line
         capturedlinearray[3] = capturedlinearray[3][:-1]
         
-        
+        is_american = False
         with open('us_ips.csv', 'r') as usiplistfile:
             for usipline in usiplistfile:
                 usiplinearray = usipline.split(",")
@@ -22,11 +22,18 @@ with open('iplist.txt', 'rw') as capturediplistfile:
                     if(int(capturedlinearray[1]) >= int(usip0[1]) and int(capturedlinearray[1]) <= int(usip1[1])):
                         if(int(capturedlinearray[2]) >= int(usip0[2]) and int(capturedlinearray[2]) <= int(usip1[2])):
                             if(int(capturedlinearray[3]) >= int(usip0[3]) and int(capturedlinearray[3]) <= int(usip1[3])):
-                                print("American IP found")
-                                print("American IP is "+str(capturedlinearray))
-                                print("Range "+str(usip0)+" "+str(usip1))
-                                print(" ")
-        
+                                #print("American IP found")
+                                print("American IP is removed: "+str(capturedlinearray[0])+"."+str(capturedlinearray[1])+"."+str(capturedlinearray[2])+"."+str(capturedlinearray[3]))
+                                #print("Range "+str(usip0)+" "+str(usip1))
+                                #print(" ")
+                                is_american = True
+                    
+                    
+        if(is_american == False):
+            good_ip = (str(capturedlinearray[0])+"."+str(capturedlinearray[1])+"."+str(capturedlinearray[2])+"."+str(capturedlinearray[3]))
+            with open('usa_removed_iplist.txt', "a") as myfile:
+               myfile.write(good_ip+"\n")
+    
         
         
         
