@@ -24,7 +24,7 @@ with open('iplist.txt', 'rw') as capturediplistfile:
                             if(int(capturedlinearray[3]) >= int(usip0[3]) and int(capturedlinearray[3]) <= int(usip1[3])):
                                 print("American IP found")
                                 print("American IP is "+str(capturedlinearray))
-                                print(str(usip0)+" "+str(usip1))
+                                print("Range "+str(usip0)+" "+str(usip1))
                                 print(" ")
         
         
