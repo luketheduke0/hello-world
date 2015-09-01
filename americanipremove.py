@@ -5,8 +5,8 @@ with open('iplist.txt', 'rw') as capturediplistfile:
     for capturedline in capturediplistfile:
         capturedlinearray = capturedline.split(".")
         
-        #remove return character from line
-        capturedlinearray[3] = capturedlinearray[3][:-1]
+        #remove return character from line(maybe not necessary)
+        #capturedlinearray[3] = capturedlinearray[3][:-1]
         
         is_american = False
         with open('us_ips.csv', 'r') as usiplistfile:
@@ -16,6 +16,7 @@ with open('iplist.txt', 'rw') as capturediplistfile:
                     usip0 = usiplinearray[0].split(".")
                     usip1 = usiplinearray[1].split(".")
                 except:
+                    print(usipline); sys.exit()
                     break
                     
                 if(int(capturedlinearray[0]) >= int(usip0[0]) and int(capturedlinearray[0]) <= int(usip1[0])):
@@ -27,6 +28,7 @@ with open('iplist.txt', 'rw') as capturediplistfile:
                                 #print("Range "+str(usip0)+" "+str(usip1))
                                 #print(" ")
                                 is_american = True
+                                
                     
                     
         if(is_american == False):
