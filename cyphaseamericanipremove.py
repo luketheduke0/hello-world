@@ -4,7 +4,6 @@
 # two, three and four. Anything after is by luketheduke0 on GitHub.
 
 import csv
-import ipaddress
 
 
 def ip_tuple(ip_str):
@@ -17,7 +16,7 @@ outfile_path = 'usa_removed_iplist.txt'
 
 
 ip_ranges = []
-with open(ip_ranges_file_path, 'r', newline='') as ip_ranges_file:
+with open(ip_ranges_file_path, 'r') as ip_ranges_file:
     ip_ranges_reader = csv.reader(ip_ranges_file)
     for start_ip_str, end_ip_str, __, __, __ in ip_ranges_reader:
         start_ip, end_ip = ip_tuple(start_ip_str), ip_tuple(end_ip_str)
